@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine 💜</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(120deg,#1b001f,#2b0033,#14001a);
+  background-size:400% 400%;
+  animation:bgMove 15s ease infinite;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* floating hearts */
+.heart{
+  position:fixed;
+  color:rgba(255,200,230,0.15);
+  font-size:18px;
+  animation:floatUp 10s linear infinite;
+}
+@keyframes floatUp{
+  0%{transform:translateY(100vh);opacity:0}
+  20%{opacity:1}
+  100%{transform:translateY(-10vh);opacity:0}
+}
+
+section{
+  min-height:100vh;
+  padding:80px 8%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.box{
+  max-width:900px;
+  width:100%;
+  background:rgba(255,255,255,0.05);
+  border-radius:30px;
+  padding:55px;
+  text-align:center;
+  box-shadow:
+    0 0 40px rgba(190,140,255,0.6),
+    0 0 90px rgba(190,140,255,0.25);
+  backdrop-filter:blur(14px);
+}
+
+h1,h2{
+  font-family:'Playfair Display',serif;
+  color:#e6c7ff;
+}
+
+p{
+  color:#f1dcff;
+  line-height:2;
+  margin-top:20px;
+}
+
+img{
+  margin-top:35px;
+  width:100%;
+  max-width:420px;
+  border-radius:25px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  box-shadow:0 0 30px rgba(200,150,255,0.6);
+}
+
+.btn{
+  margin-top:35px;
+  padding:14px 38px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#d4b1ff,#ffe6b3);
+  color:#2b0033;
+  font-weight:500;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(255,220,180,0.8);
+}
+
+.highlights{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+.card{
+  background:rgba(0,0,0,0.35);
+  border-radius:22px;
+  padding:25px;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(200,150,255,0.4);
+}
+
+.msg{display:none;margin-top:15px;}
+
+.login input{
+  width:100%;
+  padding:14px;
+  margin-top:15px;
+  border-radius:15px;
+  border:none;
+}
+
+.folders{
+  display:none;
+  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  margin-top:40px;
+}
+
+.folder{
+  padding:30px;
+  border-radius:22px;
+  background:rgba(0,0,0,0.4);
+  cursor:pointer;
+  box-shadow:0 0 30px rgba(200,150,255,0.5);
+}
+
+.gallery{
+  display:none;
+  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  margin-top:40px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:20px;
+}
+
+footer{
+  padding:30px;
+  text-align:center;
+  color:#e6c7ff;
+  font-size:0.85rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- floating hearts -->
+<script>
+for(let i=0;i<25;i++){
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💜";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDelay=Math.random()*10+"s";
+  document.body.appendChild(h);
+}
+</script>
+
+<section id="home">
+  <div class="box">
+    <h1>Happy Valentine’s Day 💜</h1>
+    <p>
+      This page is not just a surprise.  
+      It’s a piece of my heart — written, designed,
+      and wrapped only for you.
+    </p>
+    <img src="F:\valentine\days\img\our4.jpg">
+    <button class="btn" onclick="go('days')">Go to Our Days 💞</button>
+  </div>
+</section>
+
+<section id="days">
+  <div class="box">
+    <h2>Our Special Days</h2>
+
+    <div class="highlights">
+      <div class="card" onclick="toggle(this)">
+        <h3>Rose Day 🌹</h3>
+        <div class="msg">🌹 A rose for you 🌹</div>
+      </div>
+      <div class="card" onclick="toggle(this)">
+        <h3>Propose Day 💍</h3>
+        <div class="msg">💍 I choose you 💍</div>
+      </div>
+      <div class="card" onclick="toggle(this)">
+        <h3>Chocolate Day 🍫</h3>
+        <div class="msg">🍫 Sweetest soul 🍫</div>
+      </div>
+      <div class="card" onclick="showLogin()">
+        <h3>Valentine Gift 🎁</h3>
+      </div>
+    </div>
+
+    <button class="btn" onclick="go('login')">Open Gift 🔐</button>
+  </div>
+</section>
+
+<section id="login">
+  <div class="box login">
+    <h2>Login to Unlock 💜</h2>
+    <input id="uid" placeholder="ID">
+    <input id="pass" type="password" placeholder="Password">
+    <button class="btn" onclick="login()">Unlock</button>
+  </div>
+</section>
+
+<section id="folders">
+  <div class="box">
+    <div class="folders" id="folderBox">
+      <div class="folder" onclick="openGallery('ours')">OURS ❤️</div>
+      <div class="folder" onclick="openGallery('you')">YOU 💕</div>
+      <div class="folder" onclick="openGallery('me')">ME 💖</div>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section id="end">
+  <div class="box">
+    <h2>Thank You 💜</h2>
+    <p>
+      Thank you for choosing me.  
+      Happy Valentine’s Day — forever us.
+    </p>
+  </div>
+</section>
+
+<footer>
+© Made with love
+</footer>
+
+<script>
+function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
+function toggle(c){let m=c.querySelector('.msg');if(m)m.style.display=m.style.display=="block"?"none":"block"}
+function showLogin(){go('login')}
+function login(){
+  if(uid.value=="30092024" && pass.value=="2992010"){
+    document.getElementById("folderBox").style.display="grid";
+    go('folders');
+  }else alert("Wrong 💔");
+}
+function openGallery(t){
+  gallery.style.display="grid";gallery.innerHTML="";
+  for(let i=1;i<=6;i++){
+    let img=document.createElement("img");
+    img.src=`assets/${t}/${i}.jpg`;
+    gallery.appendChild(img);
+  }
+}
+</script>
+
+</body>
+</html>

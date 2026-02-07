@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Promise Day 🤞</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,#0f172a,#1e293b,#0f172a);
+  color:#e5e7eb;
+  overflow-x:hidden;
+}
+
+/* SOFT FLOATING DOTS */
+.dot{
+  position:fixed;
+  width:6px;
+  height:6px;
+  background:#94a3b8;
+  border-radius:50%;
+  opacity:0.25;
+  animation:float 12s linear infinite;
+  z-index:-1;
+}
+
+@keyframes float{
+  from{transform:translateY(110vh)}
+  to{transform:translateY(-120px)}
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  padding:90px 7%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero-box{
+  max-width:720px;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:3.2rem;
+  color:#f8fafc;
+  margin-bottom:25px;
+}
+
+.hero p{
+  font-size:1.1rem;
+  line-height:2.1;
+  color:#cbd5f5;
+}
+
+.hero button{
+  margin-top:40px;
+  padding:15px 44px;
+  border-radius:40px;
+  border:none;
+  background:#6366f1;
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 15px 30px rgba(99,102,241,0.45);
+}
+
+.hero button:hover{
+  transform:translateY(-3px);
+  background:#4f46e5;
+}
+
+/* PROMISE SECTION */
+.promises{
+  padding:90px 7%;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px;
+}
+
+.promise-card{
+  background:rgba(255,255,255,0.06);
+  border-radius:26px;
+  padding:45px 35px;
+  box-shadow:0 30px 45px rgba(0,0,0,0.35);
+  transition:0.4s;
+}
+
+.promise-card:hover{
+  transform:translateY(-8px);
+}
+
+.promise-card h3{
+  font-family:'Playfair Display',serif;
+  color:#e0e7ff;
+  margin-bottom:15px;
+}
+
+.promise-card p{
+  font-size:0.95rem;
+  line-height:1.9;
+  color:#c7d2fe;
+}
+
+/* INTERACTIVE PROMISE */
+.interactive{
+  padding:90px 7%;
+  text-align:center;
+}
+
+.interactive h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.6rem;
+  margin-bottom:30px;
+}
+
+.interactive p{
+  max-width:650px;
+  margin:auto;
+  line-height:2.1;
+  color:#cbd5f5;
+}
+
+.promise-btn{
+  margin-top:35px;
+  padding:14px 40px;
+  border-radius:35px;
+  background:transparent;
+  border:2px solid #818cf8;
+  color:#e0e7ff;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.promise-btn:hover{
+  background:#6366f1;
+  border-color:#6366f1;
+}
+
+/* FINAL PROMISE */
+.final{
+  padding:100px 7%;
+  background:linear-gradient(180deg,#1e293b,#0f172a);
+  text-align:center;
+}
+
+.final p{
+  font-size:1.15rem;
+  line-height:2.3;
+  color:#e5e7eb;
+}
+
+.final strong{
+  color:#a5b4fc;
+}
+
+/* FOOTER */
+.footer{
+  padding:40px 0;
+  text-align:center;
+  font-size:0.85rem;
+  color:#94a3b8;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .promises{grid-template-columns:1fr}
+  .hero h1{font-size:2.5rem}
+}
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING DOTS -->
+<script>
+for(let i=0;i<25;i++){
+  const d=document.createElement("div");
+  d.className="dot";
+  d.style.left=Math.random()*100+"%";
+  d.style.animationDuration=(7+Math.random()*7)+"s";
+  document.body.appendChild(d);
+}
+</script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-box">
+    <h1>Promise Day 🤞</h1>
+    <p>
+      I won’t promise perfection.<br><br>
+      But I promise honesty,
+      effort,
+      and a heart that always chooses you.
+    </p>
+
+    <button onclick="document.querySelector('.promises').scrollIntoView({behavior:'smooth'})">
+      Read my promises
+    </button>
+  </div>
+</section>
+
+<!-- PROMISE CARDS -->
+<section class="promises">
+  <div class="promise-card">
+    <h3>I Promise to Stay</h3>
+    <p>
+      Even on the days we don’t understand each other,
+      I won’t leave.
+    </p>
+  </div>
+
+  <div class="promise-card">
+    <h3>I Promise to Listen</h3>
+    <p>
+      To your words,
+      your silence,
+      and everything you don’t say.
+    </p>
+  </div>
+
+  <div class="promise-card">
+    <h3>I Promise to Grow</h3>
+    <p>
+      With you,
+      for you,
+      and because of you.
+    </p>
+  </div>
+
+  <div class="promise-card">
+    <h3>I Promise Respect</h3>
+    <p>
+      Your dreams,
+      your fears,
+      your heart.
+    </p>
+  </div>
+</section>
+
+<!-- INTERACTIVE -->
+<section class="interactive">
+  <h2>This Is Not Just Words</h2>
+  <p>
+    Promises are easy to say.
+    Living them is harder.
+    And I choose that — every day.
+  </p>
+
+  <button class="promise-btn" onclick="showFinal()">
+    I mean it
+  </button>
+</section>
+
+<!-- FINAL -->
+<section class="final" id="finalPromise">
+  <p>
+    No matter where life takes us,<br>
+    no matter how loud the world becomes,<br><br>
+
+    <strong>
+      I promise —<br>
+      my hand will always look for yours.
+    </strong>
+  </p>
+
+  <!-- ONLY ADDED BUTTON -->
+  <button class="promise-btn" onclick="window.location.href='F:\\valentine\\index.html'">
+    ⬅ Back to Valentine Page
+  </button>
+</section>
+
+<div class="footer">
+  Promise Day — Words lived, not spoken
+</div>
+
+<script>
+function showFinal(){
+  document.getElementById("finalPromise")
+    .scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>

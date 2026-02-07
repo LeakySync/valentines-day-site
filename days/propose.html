@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Propose Day 💍</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(160deg,#040b1f,#0b1d3a,#040b1f);
+  color:#f5f7ff;
+  overflow-x:hidden;
+}
+
+/* 💍 ANIMATED RING BACKGROUND */
+.ring-bg{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  z-index:-1;
+}
+
+.ring-bg span{
+  position:absolute;
+  font-size:26px;
+  opacity:0.08;
+  animation: floatRing linear infinite;
+}
+
+@keyframes floatRing{
+  0%{transform:translateY(110vh) rotate(0deg);}
+  100%{transform:translateY(-120vh) rotate(360deg);}
+}
+
+/* ---------- MAIN PROPOSAL SECTION ---------- */
+.main{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 6%;
+}
+
+.proposal-box{
+  max-width:650px;
+  width:100%;
+  background:rgba(255,255,255,0.07);
+  border-radius:30px;
+  padding:50px 40px;
+  text-align:center;
+  box-shadow:0 0 60px rgba(80,140,255,0.45);
+  backdrop-filter:blur(14px);
+}
+
+.proposal-box h1{
+  font-family:'Playfair Display',serif;
+  font-size:2.6rem;
+  margin-bottom:25px;
+  color:#ffd27d;
+}
+
+.proposal-box p{
+  font-size:1rem;
+  line-height:1.9;
+  color:#e1e6ff;
+  margin-bottom:35px;
+}
+
+/* RING */
+.ring{
+  font-size:70px;
+  margin-bottom:30px;
+  animation:pulse 2s infinite;
+  color:#ffd27d;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+  100%{transform:scale(1)}
+}
+
+.question{
+  font-size:1.4rem;
+  margin-bottom:30px;
+  color:#f6f2ff;
+}
+
+.btns{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+}
+
+button{
+  padding:14px 40px;
+  border-radius:40px;
+  border:none;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.yes{
+  background:linear-gradient(135deg,#ffd27d,#caa24d);
+  color:#1a1200;
+  box-shadow:0 0 25px rgba(255,210,125,0.8);
+}
+
+.no{
+  background:transparent;
+  border:2px solid #9db4ff;
+  color:#dbe2ff;
+}
+
+button:hover{
+  transform:translateY(-3px);
+}
+
+.no-box{
+  display:none;
+  margin-top:35px;
+}
+
+.no-box p{
+  font-size:1.1rem;
+  margin-bottom:20px;
+  color:#ffdde8;
+}
+
+/* ---------- YES SECTION ---------- */
+.yes-section{
+  min-height:100vh;
+  padding:80px 6%;
+  display:none;
+}
+
+.yes-content{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+}
+
+.yes-content h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.4rem;
+  color:#ffd27d;
+  margin-bottom:30px;
+}
+
+.yes-content p{
+  font-size:1rem;
+  line-height:2;
+  color:#e3e8ff;
+  margin-bottom:25px;
+}
+
+.photo-box-wrapper{
+  margin-top:60px;
+  display:flex;
+  justify-content:center;
+}
+
+.photo-box{
+  width:420px;
+  aspect-ratio:16/9;
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(255,255,255,0.08);
+  box-shadow:
+    0 0 35px rgba(120,170,255,0.45),
+    inset 0 0 25px rgba(255,255,255,0.12);
+}
+
+.photo-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* BACK BUTTON */
+.back-btn{
+  margin-top:70px;
+}
+
+.back-btn a{
+  padding:14px 36px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ffd27d,#caa24d);
+  color:#1a1200;
+  text-decoration:none;
+  box-shadow:0 0 30px rgba(255,210,125,0.8);
+  font-size:0.9rem;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .proposal-box h1{font-size:2.1rem}
+  .proposal-box{padding:35px 25px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 💍 BACKGROUND RINGS -->
+<div class="ring-bg" id="ringBg"></div>
+
+<!-- MAIN PROPOSAL -->
+<section class="main">
+  <div class="proposal-box">
+    <h1>Hey Love 💗</h1>
+
+    <p>
+      Even when the world felt chaotic,  
+      the moment you entered my life,  
+      everything started to feel calm and right.<br>
+      As its the proposal day, I have a question for you —
+    </p>
+
+    <div class="ring">💍</div>
+
+    <div class="question">Will you marry me?</div>
+
+    <div class="btns">
+      <button class="yes" onclick="sayYes()">Yes</button>
+      <button class="no" onclick="sayNo()">No</button>
+    </div>
+
+    <div class="no-box" id="noBox">
+      <p id="noText"></p>
+      <div class="btns">
+        <button class="yes" onclick="sayYes()">Yes</button>
+        <button class="no" onclick="sayNo()">No</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YES CONTENT -->
+<section class="yes-section" id="yesSection">
+  <div class="yes-content">
+    <h2>This Is Our Story 💖</h2>
+
+    <p>
+      That moment in July when you proposed to me  
+      is still crystal clear in my heart.  
+      All I asked for was a little time —  
+      just three months.
+    </p>
+
+    <p>
+      After your birthday on September 29,  
+      the very next day…  
+      on the St. Thomas School ICSE Road ,  
+      I held the ring and asked you again —
+      Will you marry me?
+    </p>
+
+    <p>
+      The moment you said “YES”  
+      became the turning point of my life.
+    </p>
+
+    <p><strong>I love you. Always. ♾️</strong></p>
+
+    <div class="photo-box-wrapper">
+      <div class="photo-box">
+        <img src="F:\valentine\days\img\our2.png">
+      </div>
+    </div>
+
+    <div class="back-btn">
+      <a href="F:\valentine\index.html">← Back to Valentine Journey</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* 💍 Background ring generator */
+const bg=document.getElementById("ringBg");
+for(let i=0;i<40;i++){
+  const r=document.createElement("span");
+  r.textContent="💍";
+  r.style.left=Math.random()*100+"%";
+  r.style.fontSize=(18+Math.random()*35)+"px";
+  r.style.animationDuration=(18+Math.random()*22)+"s";
+  r.style.animationDelay=Math.random()*-20+"s";
+  bg.appendChild(r);
+}
+
+let noCount=0;
+const questions=[
+  "Really no? 😶",
+  "Please think again… 🥺",
+  "Are you absolutely sure? 💔",
+  "Last chance… 😢",
+  "Do you really want to say no? 😭",
+  "This is breaking my heart 😞",
+  "Please… 🥹",
+  "Just one more time? 💕",
+  "Still no? 😔",
+  "Okay… can you tell me why? 😶"
+];
+
+function sayNo(){
+  const box=document.getElementById("noBox");
+  const text=document.getElementById("noText");
+  box.style.display="block";
+
+  if(noCount<questions.length){
+    text.innerText=questions[noCount];
+    noCount++;
+  }else{
+    window.close();
+  }
+}
+
+function sayYes(){
+  document.querySelector(".main").style.display="none";
+  const yes=document.getElementById("yesSection");
+  yes.style.display="block";
+  yes.scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>

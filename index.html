@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Forever Us</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:
+    radial-gradient(circle at top left,#ff4dff33,transparent 45%),
+    radial-gradient(circle at bottom right,#a855f733,transparent 45%),
+    linear-gradient(180deg,#0b0011,#16001f,#0b0011);
+  color:#f6e9ff;
+}
+
+/* HERO SECTION */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:70px 8%;
+}
+
+/* MAIN CARD */
+.hero-box{
+  position:relative;
+  background:rgba(18,5,28,0.8);
+  border-radius:28px;
+  padding:65px;
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:60px;
+  align-items:center;
+  max-width:1200px;
+  box-shadow:
+    0 0 35px rgba(255,100,255,0.35),
+    0 0 80px rgba(168,85,247,0.25);
+}
+
+/* NEON BORDER */
+.hero-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:28px;
+  padding:2px;
+  background:linear-gradient(120deg,#ff4dff,#a855f7,#ff4dff);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask-composite:exclude;
+  pointer-events:none;
+}
+
+/* TEXT */
+.hero-text h1{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;
+  font-weight:600;
+  margin-bottom:22px;
+}
+
+.hero-text h1 span{
+  color:#ff9dff;
+  text-shadow:0 0 16px rgba(255,120,255,0.9);
+}
+
+.hero-text p{
+  font-size:1rem;
+  line-height:1.9;
+  color:#ead7ff;
+  margin-bottom:18px;
+}
+
+/* TAG */
+.valentine-tag{
+  display:inline-block;
+  margin-bottom:20px;
+  padding:8px 18px;
+  border-radius:30px;
+  background:rgba(255,77,255,0.15);
+  color:#ffb3ff;
+  font-size:0.85rem;
+  letter-spacing:1px;
+  box-shadow:0 0 14px rgba(255,77,255,0.45);
+}
+
+/* DIVIDER */
+.divider{
+  width:80px;
+  height:3px;
+  background:#ff4dff;
+  margin:35px 0;
+  box-shadow:0 0 14px rgba(255,77,255,0.8);
+}
+
+/* BUTTON */
+.next-btn{
+  display:inline-block;
+  margin-top:35px;
+  padding:14px 38px;
+  border-radius:40px;
+  background:linear-gradient(135deg,#ff4dff,#a855f7);
+  color:#fff;
+  text-decoration:none;
+  font-size:0.9rem;
+  letter-spacing:1.2px;
+  box-shadow:0 0 25px rgba(255,120,255,0.8);
+  transition:0.35s ease;
+}
+
+.next-btn:hover{
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:0 0 45px rgba(255,150,255,1);
+}
+
+/* IMAGE */
+.hero-image img{
+  width:100%;
+  border-radius:22px;
+  box-shadow:
+    0 0 35px rgba(255,100,255,0.45),
+    0 30px 70px rgba(0,0,0,0.7);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px 0;
+  font-size:0.85rem;
+  color:#cdb8ff;
+  letter-spacing:1px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero-box{
+    grid-template-columns:1fr;
+    padding:45px;
+    text-align:center;
+  }
+  .divider{
+    margin:35px auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-box">
+
+    <div class="hero-text">
+      <div class="valentine-tag">VALENTINE • LOVE • FOREVER</div>
+
+      <h1>
+        This Story Is <span>Ours</span>
+      </h1>
+
+      <p>
+        From quiet beginnings to deep connections,
+        loving you slowly became the most beautiful habit
+        my heart ever learned.
+      </p>
+
+      <p>
+        This page holds more than words —
+        it holds moments, feelings, and the promise
+        of everything still waiting for us.
+      </p>
+
+      <div class="divider"></div>
+
+      <p>
+        Not loud.<br>
+        Not rushed.<br>
+        Just real, warm, and endlessly ours.
+      </p>
+
+      <!-- 🔽 PREMIUM BUTTON -->
+      <a href="days.html" class="next-btn">Continue Our Journey →</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="F:\valentine\days\img\our.png" alt="Love Image">
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © AK — Crafted with Love
+</footer>
+
+</body>
+</html>

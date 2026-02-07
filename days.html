@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Valentine Days</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:
+    radial-gradient(circle at top left,#ff4dff33,transparent 45%),
+    radial-gradient(circle at bottom right,#a855f733,transparent 45%),
+    linear-gradient(180deg,#0b0011,#16001f,#0b0011);
+  color:#f6e9ff;
+  overflow-x:hidden; /* horizontal scroll block */
+}
+
+/* MAIN WRAPPER */
+.wrapper{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 6%;
+  min-height:100vh; /* full viewport height on PC */
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* HEADER */
+.header{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.header h1{
+  font-family:'Playfair Display',serif;
+  font-size:2.8rem;
+  color:#ff9dff;
+  text-shadow:0 0 18px rgba(255,120,255,0.8);
+}
+
+.header p{
+  margin-top:15px;
+  font-size:1rem;
+  color:#ead7ff;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.8;
+}
+
+/* DAY CARDS GRID */
+.days{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  flex-shrink:0;
+}
+
+.day-card{
+  position:relative;
+  background:rgba(18,5,28,0.75);
+  border-radius:22px;
+  padding:25px;
+  box-shadow:
+    0 0 30px rgba(255,100,255,0.25),
+    inset 0 0 25px rgba(200,100,255,0.15);
+  transition:0.4s ease;
+}
+
+.day-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:22px;
+  padding:2px;
+  background:linear-gradient(120deg,#ff4dff,#a855f7,#ff4dff);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask-composite:exclude;
+  pointer-events:none;
+}
+
+.day-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 40px rgba(255,120,255,0.55);
+}
+
+.day-card h2{
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;
+  margin-bottom:10px;
+  color:#ffb3ff;
+}
+
+.day-card p{
+  font-size:0.9rem;
+  line-height:1.6;
+  color:#e7d6ff;
+  margin-bottom:18px;
+}
+
+/* ENTER BUTTON LEFT-ALIGNED */
+.day-card button{
+  display:inline-block;
+  padding:10px 24px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:0.85rem;
+  letter-spacing:1px;
+  background:linear-gradient(135deg,#ff4dff,#a855f7);
+  color:#fff;
+  box-shadow:0 0 18px rgba(255,120,255,0.7);
+  border:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.day-card button:hover{
+  box-shadow:0 0 30px rgba(255,150,255,0.9);
+}
+
+/* COPYRIGHT OUTSIDE WRAPPER */
+footer{
+  text-align:center;
+  font-size:0.85rem;
+  color:#cdb8ff;
+  letter-spacing:1px;
+  padding:20px 0;
+  margin-top:20px;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:900px){
+  body{
+    overflow:auto;
+  }
+  .wrapper{
+    min-height:auto;
+    padding:40px 6%;
+  }
+  .days{
+    gap:20px;
+  }
+  .header h1{
+    font-size:2.4rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <div class="header">
+    <h1>Our Valentine Journey 💜</h1>
+    <p>
+      Every day before Valentine’s Day carries its own emotion.
+      Each one slowly built the story that led us here — to us.
+      Choose a day and enter the secret page to see its story.
+    </p>
+  </div>
+
+  <div class="days">
+
+    <div class="day-card">
+      <h2>🌹 Rose Day</h2>
+      <p>A day that begins with simplicity — one rose, one feeling.</p>
+      <button onclick="goToPassword('rose')">Enter</button>
+    </div>
+
+    <div class="day-card">
+      <h2>💍 Propose Day</h2>
+      <p>When words finally found courage and hearts spoke louder than fear.</p>
+      <button onclick="goToPassword('propose')">Enter</button>
+    </div>
+
+    <div class="day-card">
+      <h2>🍫 Chocolate Day</h2>
+      <p>Sweet moments, shared smiles, and love that melts without effort.</p>
+      <button onclick="goToPassword('chocolate')">Enter</button>
+    </div>
+
+    <div class="day-card">
+      <h2>🧸 Teddy Day</h2>
+      <p>Soft, warm, comforting — just like the way you make me feel.</p>
+      <button onclick="goToPassword('teddy')">Enter</button>
+    </div>
+
+    <div class="day-card">
+      <h2>🤞 Promise Day</h2>
+      <p>Not perfect words, just honest promises meant to last.</p>
+      <button onclick="goToPassword('promise')">Enter</button>
+    </div>
+
+    <div class="day-card">
+      <h2>🤗 Hug Day</h2>
+      <p>Where everything feels safe, warm, and exactly where it should be.</p>
+      <button onclick="goToPassword('hug')">Enter</button>
+    </div>
+
+    <div class="day-card">
+      <h2>💋 Kiss Day</h2>
+      <p>A moment that needs no explanation, only feeling.</p>
+      <button onclick="goToPassword('kiss')">Enter</button>
+    </div>
+
+    <div class="day-card">
+      <h2>❤️ Valentine’s Day</h2>
+      <p>The day everything leads to — us, our love, and everything ahead.</p>
+      <button onclick="goToPassword('valentines')">Enter</button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- COPYRIGHT OUTSIDE WRAPPER -->
+<footer>
+  © AK — Our Love Timeline
+</footer>
+
+<script>
+function goToPassword(day) {
+  localStorage.setItem("selectedDay", day);
+  window.location.href = "password.html";
+}
+</script>
+
+</body>
+</html>

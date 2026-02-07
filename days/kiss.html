@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Kiss Day ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background: radial-gradient(circle at top, #2b0015, #0a0005);
+    color:#fff;
+    overflow-x:hidden;
+    min-height:100vh;
+    padding:50px 20px;
+    display:flex;
+    justify-content:center;
+}
+
+/* Floating hearts */
+.heart{
+    position:fixed;
+    bottom:-50px;
+    font-size:20px;
+    animation: floatUp 10s linear infinite;
+    opacity:0.15;
+    pointer-events:none;
+}
+
+@keyframes floatUp{
+    0%{transform:translateY(0) rotate(0deg);}
+    50%{transform:translateY(-50vh) rotate(180deg);}
+    100%{transform:translateY(-110vh) rotate(360deg);}
+}
+
+/* Container */
+.container{
+    width:100%;
+    max-width:850px;
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+/* Section cards */
+.card{
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-radius:25px;
+    padding:30px 25px;
+    box-shadow: 0 10px 30px rgba(255,0,100,0.25);
+    transition: 0.3s;
+}
+.card:hover{
+    box-shadow: 0 15px 35px rgba(255,0,100,0.4);
+}
+
+/* Titles */
+.title{
+    font-family:'Great Vibes', cursive;
+    font-size:56px;
+    text-align:center;
+    color:#ff4d88;
+    text-shadow: 0 0 12px #ff4d88;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:18px;
+    opacity:0.85;
+    margin-top:5px;
+}
+
+.kiss-wish{
+    text-align:center;
+    font-size:22px;
+    color:#ff99bb;
+    margin-top:15px;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.05)}
+}
+
+/* Section headings */
+.card h2{
+    color:#ff80aa;
+    font-weight:500;
+    margin-bottom:12px;
+}
+
+.card p{
+    line-height:1.7;
+    font-size:16px;
+    opacity:0.9;
+}
+
+/* Kiss button */
+.kiss-zone{
+    text-align:center;
+    margin-top:15px;
+}
+.kiss-btn{
+    background:linear-gradient(45deg,#ff0055,#ff6699);
+    border:none;
+    padding:14px 36px;
+    font-size:18px;
+    border-radius:50px;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 15px rgba(255,0,100,0.6);
+    transition:0.3s;
+}
+.kiss-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 30px rgba(255,0,100,0.9);
+}
+
+/* Lips animation */
+.lips{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    font-size:100px;
+    z-index:999;
+    animation:kissZoom 2s forwards;
+    pointer-events:none;
+}
+@keyframes kissZoom{
+    0%{transform:translate(-50%,-50%) scale(0); opacity:0}
+    30%{opacity:1}
+    100%{transform:translate(-50%,-50%) scale(3); opacity:0}
+}
+
+/* Back button */
+.back-btn{
+    display:block;
+    margin:40px auto 0 auto;
+    background:linear-gradient(135deg,#ff6699,#ff0055);
+    color:#fff;
+    padding:12px 36px;
+    border-radius:40px;
+    border:none;
+    font-size:16px;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(255,0,100,0.6);
+    transition:0.3s;
+}
+.back-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 35px rgba(255,0,100,0.9);
+}
+</style>
+</head>
+<body>
+
+<!-- Floating hearts -->
+<script>
+for(let i=0;i<25;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=8+Math.random()*6+"s";
+    heart.style.fontSize=16+Math.random()*20+"px";
+    heart.style.opacity=0.1 + Math.random()*0.15;
+    document.body.appendChild(heart);
+}
+</script>
+
+<div class="container">
+
+    <!-- Title Card -->
+    <div class="card">
+        <div class="title">Happy Kiss Day 💋</div>
+        <div class="subtitle">MWUAHH 💋 MWUAHH 💋 MWUAHH 💋 All the kisses I owe you… delivered right here ❤️</div>
+        <div class="kiss-wish">A thousand kisses wouldn’t still be enough 💞</div>
+    </div>
+
+    <!-- First Kiss -->
+    <div class="card">
+        <h2>Our First Kiss 💗</h2>
+        <p>
+            Our very first kiss wasn’t loud, wasn’t dramatic…  
+            It happened quietly, at <strong>ST Thomas School – ICSE Road</strong>,  
+            when I kissed your hand.  
+            That moment felt pure, nervous, and unbelievably real.
+        </p>
+    </div>
+
+    <!-- Real First Kiss -->
+    <div class="card">
+        <h2>The Real First Kiss 😳💓</h2>
+        <p>
+            But the real first kiss you gave me…  
+            That happened at <strong>ST Thomas School canteen</strong>.  
+            You made sure no one was there.  
+            You took the risk.  
+            It was fast… but powerful.  
+            <br><br>
+            After that kiss, my mind went blank.  
+            My heart raced.  
+            I forgot how to act normal.
+        </p>
+    </div>
+
+    <!-- My Kiss To You -->
+    <div class="card">
+        <h2>My Kiss To You 🤍</h2>
+        <p>
+            And when I kissed you back there again,  
+            it wasn’t rushed… it was on your <strong>forehead</strong>.  
+            <br><br>
+            Not just a kiss.  
+            A promise.  
+            Safety.  
+            Protection.  
+            Love that stays.
+        </p>
+    </div>
+
+    <!-- Kiss Button -->
+    <div class="card kiss-zone">
+        <h2>Give Me A Kiss 💋</h2>
+        <p>Click the button… and let me kiss you right now.</p>
+        <button class="kiss-btn" onclick="giveKiss()">MWUAHH 💋</button>
+    </div>
+
+    <!-- Back Button -->
+    <button class="back-btn" onclick="location.href='F:\\valentine\\index.html'">← Back to Valentines Page</button>
+
+</div>
+
+<script>
+function giveKiss(){
+    let lips=document.createElement("div");
+    lips.className="lips";
+    lips.innerHTML="💋";
+    document.body.appendChild(lips);
+
+    setTimeout(()=>{
+        lips.remove();
+    },2000);
+}
+</script>
+
+</body>
+</html>

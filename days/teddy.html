@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Teddy Day 🧸</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,#12080c,#1b0f14,#12080c);
+  color:#f3dbe5;
+  overflow-x:hidden;
+}
+
+/* 🧸 FLOATING TEDDY BACKGROUND */
+.teddy-bg{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  overflow:hidden;
+}
+.teddy-bg span{
+  position:absolute;
+  font-size:26px;
+  opacity:0.08;
+  animation:floatTeddy linear infinite;
+}
+@keyframes floatTeddy{
+  from{transform:translateY(110vh) rotate(0deg)}
+  to{transform:translateY(-130vh) rotate(360deg)}
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  padding:90px 7%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:3.5rem;
+  color:#ff9bbd;
+  margin-bottom:25px;
+}
+
+.hero p{
+  font-size:1.1rem;
+  line-height:2.1;
+  color:#f0c9d9;
+}
+
+.hero button{
+  margin-top:35px;
+  padding:15px 42px;
+  border-radius:40px;
+  border:none;
+  background:#ff7fa8;
+  color:#2a0c16;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 0 35px rgba(255,127,168,0.6);
+}
+.hero button:hover{
+  background:#ff9bbd;
+  transform:translateY(-3px);
+}
+
+/* TEDDY */
+.teddy-box{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.teddy{
+  width:260px;
+  height:320px;
+  background:#ff9bbd;
+  border-radius:140px 140px 120px 120px;
+  position:relative;
+  box-shadow:0 30px 60px rgba(255,155,189,0.35);
+  cursor:pointer;
+  transition:0.4s;
+}
+
+.teddy:hover{transform:scale(1.05)}
+
+.ear{
+  width:80px;
+  height:80px;
+  background:#ff9bbd;
+  border-radius:50%;
+  position:absolute;
+  top:-35px;
+}
+.ear.left{left:-30px}
+.ear.right{right:-30px}
+
+.eye{
+  width:14px;
+  height:14px;
+  background:#3a1623;
+  border-radius:50%;
+  position:absolute;
+  top:110px;
+}
+.eye.left{left:90px}
+.eye.right{right:90px}
+
+.nose{
+  width:20px;
+  height:14px;
+  background:#6b2b44;
+  border-radius:50%;
+  position:absolute;
+  top:140px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.hug{
+  position:absolute;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:0.85rem;
+  opacity:0;
+  transition:0.4s;
+  color:#3a0f1e;
+}
+
+.teddy.active .hug{opacity:1}
+
+/* MESSAGE */
+.message{
+  padding:90px 7%;
+  text-align:center;
+}
+
+.message h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.6rem;
+  color:#ff9bbd;
+  margin-bottom:25px;
+}
+
+.message p{
+  max-width:700px;
+  margin:auto;
+  font-size:1.1rem;
+  line-height:2.2;
+  color:#f0c9d9;
+}
+
+/* INTERACTION */
+.interact{
+  padding:80px 7%;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+.card{
+  background:#1d0f15;
+  border-radius:26px;
+  padding:45px 30px;
+  text-align:center;
+  box-shadow:0 25px 40px rgba(0,0,0,0.5);
+  transition:0.4s;
+}
+
+.card:hover{transform:translateY(-10px)}
+
+.card h3{
+  color:#ff9bbd;
+  margin-bottom:15px;
+}
+
+.card p{
+  font-size:0.95rem;
+  line-height:1.9;
+  color:#f1cadb;
+}
+
+/* FINAL */
+.final{
+  padding:90px 7%;
+  background:linear-gradient(180deg,#1b0f14,#12080c);
+  text-align:center;
+}
+
+.final p{
+  font-size:1.15rem;
+  line-height:2.2;
+  color:#f0c9d9;
+}
+
+.final strong{color:#ff9bbd}
+
+/* BACK BUTTON */
+.back-btn{
+  margin:60px auto 0;
+  text-align:center;
+}
+.back-btn a{
+  padding:14px 36px;
+  border-radius:30px;
+  background:#ff7fa8;
+  color:#2a0c16;
+  text-decoration:none;
+  box-shadow:0 0 30px rgba(255,127,168,0.7);
+  font-size:0.9rem;
+}
+
+/* FOOTER */
+.footer{
+  padding:40px 0;
+  text-align:center;
+  font-size:0.85rem;
+  color:#c98aa3;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center}
+  .interact{grid-template-columns:1fr}
+  .hero h1{font-size:2.6rem}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🧸 BACKGROUND -->
+<div class="teddy-bg" id="teddyBg"></div>
+
+<script>
+for(let i=0;i<30;i++){
+  const t=document.createElement("span");
+  t.textContent="🧸";
+  t.style.left=Math.random()*100+"%";
+  t.style.fontSize=(18+Math.random()*30)+"px";
+  t.style.animationDuration=(18+Math.random()*25)+"s";
+  t.style.animationDelay=Math.random()*-20+"s";
+  document.getElementById("teddyBg").appendChild(t);
+}
+</script>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Teddy Day 🧸</h1>
+    <p>
+      I didn’t give you a teddy today.<br><br>
+      Because I want you to know —
+      <strong>I am your teddy.</strong><br><br>
+      And when you need comfort,
+      warmth, or just someone to hold you,
+      I will always be right here.
+    </p>
+
+    <button onclick="document.querySelector('.message').scrollIntoView({behavior:'smooth'})">
+      Touch your teddy
+    </button>
+  </div>
+
+  <div class="teddy-box">
+    <div class="teddy" onclick="hugTeddy()">
+      <div class="ear left"></div>
+      <div class="ear right"></div>
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="nose"></div>
+      <div class="hug">🤍 hug received</div>
+    </div>
+  </div>
+</section>
+
+<!-- MESSAGE -->
+<section class="message">
+  <h2>You Are My Teddy Too</h2>
+  <p>
+    Just like a teddy,
+    you calm me down,
+    make me smile,
+    and make everything feel safe.<br><br>
+
+    When the world feels heavy,
+    you are the one I want to hold.
+  </p>
+</section>
+
+<!-- INTERACTION -->
+<section class="interact">
+  <div class="card">
+    <h3>Soft</h3>
+    <p>The way you talk, the way you care — softer than any teddy.</p>
+  </div>
+  <div class="card">
+    <h3>Comfort</h3>
+    <p>One hug from you fixes everything.</p>
+  </div>
+  <div class="card">
+    <h3>Always Mine</h3>
+    <p>My favorite place is right next to you.</p>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <p>
+    So today,
+    no teddy gift.<br><br>
+
+    Because we already have each other.<br><br>
+
+    <strong>
+      I am your teddy.<br>
+      And you are mine. 🧸🤍
+    </strong>
+  </p>
+</section>
+
+<div class="back-btn">
+  <a href="F:\valentine\index.html">← Back to Valentine Journey</a>
+</div>
+
+<div class="footer">
+  Teddy Day — Wrapped in hugs
+</div>
+
+<script>
+function hugTeddy(){
+  document.querySelector('.teddy').classList.add('active');
+}
+</script>
+
+</body>
+</html>

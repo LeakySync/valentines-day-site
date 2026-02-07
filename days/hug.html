@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hug Day</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  overflow-x:hidden;
+  position:relative;
+  color:#ffd6eb;
+  background:
+    linear-gradient(180deg,#1a0a1f,#2d0d33,#1a0a1f);
+}
+
+/* floating hearts + hugs animation */
+.float{
+  position:fixed;
+  font-size:28px;
+  opacity:0.15; /* subtle */
+  animation:floatUp linear infinite;
+  z-index:0;
+  pointer-events:none;
+}
+@keyframes floatUp{
+  0%{transform:translateY(110vh) rotate(0deg);}
+  25%{transform:translateY(80vh) rotate(45deg);}
+  50%{transform:translateY(50vh) rotate(90deg);}
+  75%{transform:translateY(20vh) rotate(135deg);}
+  100%{transform:translateY(-120px) rotate(360deg);}
+}
+
+/* SECTION BASE */
+.section{
+  min-height:100vh;
+  padding:100px 7%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+  position:relative;
+  z-index:1;
+}
+
+.full{
+  grid-template-columns:1fr;
+  text-align:center;
+}
+
+/* TYPO */
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:3.6rem;
+  margin-bottom:20px;
+  color:#ffb3dc;
+}
+
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.6rem;
+  margin-bottom:28px;
+  color:#ff8fcf;
+}
+
+p{
+  font-size:1.1rem;
+  line-height:2.3;
+  margin-bottom:22px;
+  color:#ffcce0;
+}
+
+/* soft glow blocks */
+.glow-box{
+  background:rgba(255,255,255,0.06);
+  border-radius:32px;
+  padding:55px 50px;
+  box-shadow:
+    inset 0 0 60px rgba(255,120,180,0.1),
+    0 30px 60px rgba(0,0,0,0.6);
+}
+
+/* divider */
+.line{
+  width:140px;
+  height:2px;
+  background:linear-gradient(to right,transparent,#ff82c7,transparent);
+  margin:35px 0;
+}
+
+/* SURPRISE / BUTTONS */
+.surprise, .back-home{
+  margin-top:30px;
+  display:inline-block;
+  padding:18px 70px;
+  border-radius:60px;
+  background:linear-gradient(135deg,#d5487f,#ff82c7);
+  color:#1a0a1f;
+  text-decoration:none;
+  font-size:1.05rem;
+  box-shadow:0 20px 40px rgba(255,80,150,0.5);
+  transition:0.3s;
+}
+.surprise:hover, .back-home:hover{
+  transform:translateY(-4px);
+}
+
+/* mobile */
+@media(max-width:900px){
+  .section{
+    grid-template-columns:1fr;
+    padding:80px 8%;
+  }
+  h1{font-size:2.6rem}
+  h2{font-size:2.2rem}
+}
+</style>
+</head>
+
+<body>
+
+<script>
+// floating hearts/hugs in background
+const icons=["🤗","💗","💞","💖"];
+for(let i=0;i<25;i++){
+  let f=document.createElement("div");
+  f.className="float";
+  f.innerText=icons[Math.floor(Math.random()*icons.length)];
+  f.style.left=Math.random()*100+"%";
+  f.style.fontSize=(20+Math.random()*20)+"px";
+  f.style.animationDuration=(15+Math.random()*15)+"s";
+  f.style.opacity=0.1 + Math.random()*0.1; // low opacity
+  document.body.appendChild(f);
+}
+</script>
+
+<!-- INTRO -->
+<section class="section">
+  <div>
+    <h1>Hug Day</h1>
+    <p>
+      Hug Day is supposed to be simple.<br>
+      Two arms. One heart. No words needed.
+    </p>
+    <p>
+      But today…<br>
+      there is space between us.
+    </p>
+  </div>
+
+  <div class="glow-box">
+    <p>
+      And it’s strange how<br>
+      distance makes a hug feel heavier<br>
+      than it ever did before.
+    </p>
+    <div class="line"></div>
+    <p>
+      Suddenly, a hug is not just a hug.<br>
+      It’s comfort.<br>
+      It’s safety.<br>
+      It’s home.
+    </p>
+  </div>
+</section>
+
+<!-- FIRST HUG -->
+<section class="section">
+  <div class="glow-box">
+    <h2>Our First Hug</h2>
+    <p>
+      It wasn’t planned.<br>
+      It wasn’t perfect.
+    </p>
+    <p>
+      A canteen washroom.<br>
+      Noise outside.<br>
+      Hearts racing.
+    </p>
+    <p>
+      And then you hugged me tightly —<br>
+      like the world could wait.
+    </p>
+  </div>
+
+  <div>
+    <p>
+      That hug said everything<br>
+      words never could.
+    </p>
+    <p>
+      It felt like protection.<br>
+      Like a promise.<br>
+      Like someone finally saying,
+    </p>
+    <p>
+      <em>“You are safe here.”</em>
+    </p>
+  </div>
+</section>
+
+<!-- MISSING -->
+<section class="section full">
+  <div class="glow-box">
+    <h2>A Hug Day Without a Hug</h2>
+    <p>
+      Today is Hug Day.<br>
+      But we are busy.
+    </p>
+    <p>
+      Study leave.<br>
+      Exams.<br>
+      Situations we can’t fight right now.
+    </p>
+    <div class="line"></div>
+    <p>
+      Only when we cannot hug,<br>
+      we understand how deeply we need it.
+    </p>
+    <p>
+      Even without arms around you today,<br>
+      my heart is holding you — tightly.
+    </p>
+  </div>
+</section>
+
+<!-- SURPRISE -->
+<section class="section full">
+  <div>
+    <p>
+      This page cannot hug you.<br>
+      But it can remind you…
+    </p>
+    <p>
+      You are never alone in this.
+    </p>
+    <a class="surprise" href="hug surprise.html">See the Surprise</a><br>
+    <a class="back-home" href="index.html">Back to Home</a>
+  </div>
+</section>
+
+</body>
+</html>

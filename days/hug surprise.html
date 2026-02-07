@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>A Hug For You 🫂</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle,#2a0f24,#12040e);
+  color:#ffe4f2;
+  overflow:hidden;
+  height:100vh;
+}
+
+/* CENTER */
+.center{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  z-index:3;
+}
+
+/* TEXT */
+h1{
+  font-size:2.3rem;
+  margin-bottom:18px;
+}
+p{
+  font-size:1rem;
+  opacity:0.9;
+  margin-bottom:25px;
+}
+
+/* INPUT */
+input{
+  padding:14px 26px;
+  border-radius:40px;
+  border:none;
+  outline:none;
+  font-size:1rem;
+  text-align:center;
+  margin-bottom:18px;
+}
+
+/* BUTTON */
+button{
+  padding:12px 44px;
+  border-radius:40px;
+  border:none;
+  background:#ff8fcf;
+  color:#2a0f24;
+  font-size:0.95rem;
+  cursor:pointer;
+  margin-bottom:12px;
+}
+
+/* EXTRA BACK BUTTON */
+.home-btn{
+  padding:10px 38px;
+  border-radius:40px;
+  border:none;
+  background:#ffb3dc;
+  color:#2a0f24;
+  font-size:0.9rem;
+  cursor:pointer;
+  margin-top:20px;
+}
+
+/* HANDS */
+.hand{
+  position:absolute;
+  top:0;
+  width:50%;
+  height:100%;
+  background:radial-gradient(circle at center,#ffb3dc,#ff8fcf);
+  filter:blur(2px);
+  transition:1.8s ease;
+  z-index:2;
+}
+
+.left{
+  left:-55%;
+  border-top-right-radius:100%;
+  border-bottom-right-radius:100%;
+}
+
+.right{
+  right:-55%;
+  border-top-left-radius:100%;
+  border-bottom-left-radius:100%;
+}
+
+/* HUG STATE */
+body.hug .left{
+  left:-5%;
+}
+body.hug .right{
+  right:-5%;
+}
+
+/* GLOW */
+.glow{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle,#ffb3dc55,transparent 65%);
+  opacity:0;
+  transition:2s;
+  z-index:1;
+}
+body.hug .glow{
+  opacity:1;
+}
+
+/* MESSAGE AFTER HUG */
+.after{
+  opacity:0;
+  transition:2s;
+}
+body.hug .after{
+  opacity:1;
+}
+
+/* BACK */
+.back{
+  position:absolute;
+  bottom:25px;
+  font-size:0.85rem;
+  opacity:0.7;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hand left"></div>
+<div class="hand right"></div>
+<div class="glow"></div>
+
+<div class="center">
+  <h1>Close Your Eyes</h1>
+  <p>If you want a virtual hug,<br>type the code below</p>
+
+  <input id="code" placeholder="secret code">
+  <button onclick="hug()">Give Me The Hug</button>
+
+  <div class="after">
+    <p style="margin-top:35px;">
+      This is me holding you.<br>
+      Tight. Safe. Long.
+    </p>
+  </div>
+
+  <!-- EXTRA BACK TO HOME BUTTON -->
+  <button class="home-btn" onclick="location.href='F:\\valentine\\index.html'">⬅ Back to Valentine Page</button>
+</div>
+
+<div class="back" onclick="location.href='hug.html'">
+  ← back to main page
+</div>
+
+<script>
+function hug(){
+  const v=document.getElementById("code").value.toLowerCase().trim();
+  if(v==="blueberry" || v==="watermelon"){
+    document.body.classList.add("hug");
+  }else{
+    alert("That hug code didn’t work 🥺");
+  }
+}
+</script>
+
+</body>
+</html>
